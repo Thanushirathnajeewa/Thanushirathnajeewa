@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Thanushi Rathnajeewa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a class="brand" href="index.html">
+        Thanushi Rathnajeewa<span class="cursor">_</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="skills.html">Skills</a>
+          </li>
+
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+
+          <li>
+            <a href="experience.html">Experience</a>
+          </li>
+
+          <li>
+            <a href="certifications.html">Certifications</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        menu
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Introduction -->
+    <section style="padding-top:64px;">
+
+      <div class="container">
+
+        <h1>Get in Touch</h1>
+
+        <p style="max-width:60ch;">
+          Have an opportunity, a question, or just want to say hello?
+          Send a message below, or reach me directly through the links.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Contact Area -->
+    <section>
+
+      <div class="container two-col">
+
+
+        <!-- Contact Form -->
+        <div>
+
+          <h2 style="margin-bottom:20px;">
+            Send a Message
+          </h2>
+
+          <form
+            id="contactForm"
+            class="form-grid">
+
+            <!-- Name -->
+            <div>
+
+              <label for="name">
+                Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required>
+
+            </div>
+
+            <!-- Email -->
+            <div>
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required>
+
+            </div>
+
+            <!-- Subject -->
+            <div>
+
+              <label for="subject">
+                Subject
+              </label>
+
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                required>
+
+            </div>
+
+            <!-- Message -->
+            <div>
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="How can I help?"
+                required></textarea>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+
+              <button
+                type="submit"
+                class="btn"
+                id="submitButton">
+                Send Message
+              </button>
+
+            </div>
+
+            <!-- Status Message -->
+            <div>
+
+              <p
+                id="formStatus"
+                style="margin-top:10px; font-size: 14px;">
+              </p>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Direct Contact -->
+        <div>
+
+          <h2 style="margin-bottom:20px;">
+            Direct Contact
+          </h2>
+
+          <div class="contact-links">
+
+            <!-- Email -->
+            <a href="mailto:thanushirathnajeewa@gmail.com">
+              ✉ &nbsp; thanushirathnajeewa@gmail.com
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+94710403932">
+              ☎ &nbsp; +94 71 040 3932
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/thanushirathnajeewa"
+              target="_blank"
+              rel="noopener">
+
+              in &nbsp; linkedin.com/in/thanushirathnajeewa
+
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/Thanushirathnajeewa"
+              target="_blank"
+              rel="noopener">
+
+              ⌥ &nbsp; github.com/Thanushirathnajeewa
+
+            </a>
+
+          </div>
+
+          <!-- Location -->
+          <p style="font-size:13px; margin-top:16px;">
+            Kandy, Sri Lanka
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      © <span id="year"></span>
+      Thanushi Rathnajeewa.
+      Built with HTML &amp; CSS &amp; JavaScript.
+
+    </div>
+
+  </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+  </script>
+
+  <script src="js/script.js" defer></script>
+
+  <!-- Contact Form JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      // Set current year in footer
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // ============================================
+      // EMAILJS CONFIGURATION - Replace these with your own keys
+      // ============================================
+      
+      // Your EmailJS Public Key (from Account → API Keys)
+      const EMAILJS_PUBLIC_KEY = rSelzZt9xmp70PZ0C;
+      
+      const EMAILJS_SERVICE_ID = service_4oik76s;
+      
+      
+      const EMAILJS_TEMPLATE_ID = template_subv6rq;
+
+     
+      (function() {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      })();
+
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+      const submitButton = document.getElementById("submitButton");
+
+      
+      contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validate fields
+        if (!name || !email || !subject || !message) {
+          formStatus.textContent = "⚠️ Please fill in all fields.";
+          formStatus.style.color = "#721c24";
+          formStatus.style.backgroundColor = "#f8d7da";
+          formStatus.style.padding = "10px";
+          formStatus.style.borderRadius = "6px";
+          formStatus.style.border = "1px solid #f5c6cb";
+          return;
+        }
+
+        // Validate email format
+        if (!email.includes("@") || !email.includes(".")) {
+          formStatus.textContent = "⚠️ Please enter a valid email address.";
+          formStatus.style.color = "#721c24";
+          formStatus.style.backgroundColor = "#f8d7da";
+          formStatus.style.padding = "10px";
+          formStatus.style.borderRadius = "6px";
+          formStatus.style.border = "1px solid #f5c6cb";
+          return;
+        }
+
+        // Disable button and show loading
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        formStatus.textContent = "📧 Sending your message...";
+        formStatus.style.color = "#004085";
+        formStatus.style.backgroundColor = "#cce5ff";
+        formStatus.style.padding = "10px";
+        formStatus.style.borderRadius = "6px";
+        formStatus.style.border = "1px solid #b8daff";
+
+        // Prepare template parameters
+        const templateParams = {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message
+        };
+
+        // Send email using EmailJS
+        emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            templateParams
+          )
+          .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+
+            // Show success message
+            formStatus.textContent = "✅ Message sent successfully! I'll get back to you soon.";
+            formStatus.style.color = "#155724";
+            formStatus.style.backgroundColor = "#d4edda";
+            formStatus.style.padding = "10px";
+            formStatus.style.borderRadius = "6px";
+            formStatus.style.border = "1px solid #c3e6cb";
+
+            // Reset form
+            contactForm.reset();
+
+            // Auto-hide status after 8 seconds
+            setTimeout(function() {
+              formStatus.textContent = "";
+              formStatus.style.padding = "0";
+              formStatus.style.border = "none";
+              formStatus.style.backgroundColor = "transparent";
+            }, 8000);
+
+          })
+          .catch(function(error) {
+            console.error("FAILED...", error);
+
+            // Show error message
+            formStatus.textContent = "❌ Failed to send message. Please try again or email me directly.";
+            formStatus.style.color = "#721c24";
+            formStatus.style.backgroundColor = "#f8d7da";
+            formStatus.style.padding = "10px";
+            formStatus.style.borderRadius = "6px";
+            formStatus.style.border = "1px solid #f5c6cb";
+
+          })
+          .finally(function() {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.textContent = "Send Message";
+          });
+
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
