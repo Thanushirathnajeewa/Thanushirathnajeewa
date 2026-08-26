@@ -1,10 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
-  </script>
-
-  <script src="js/script.js" defer></script>
-
- 
-  <script>
     document.addEventListener("DOMContentLoaded", function() {
 
       // Set current year in footer
@@ -23,13 +16,15 @@
     const EMAILJS_TEMPLATE_ID = "template_subv6rq";
 
      
-      (function() {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-      })();
-
       const contactForm = document.getElementById("contactForm");
       const formStatus = document.getElementById("formStatus");
       const submitButton = document.getElementById("submitButton");
+
+      if (!contactForm) {
+        return;
+      }
+
+      emailjs.init(EMAILJS_PUBLIC_KEY);
 
       
       contactForm.addEventListener("submit", function(event) {
@@ -131,4 +126,3 @@
       });
 
     });
-  </script>
